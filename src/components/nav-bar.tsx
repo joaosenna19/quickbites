@@ -1,6 +1,5 @@
-
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const NavBar = () => {
   return (
@@ -9,19 +8,18 @@ const NavBar = () => {
         QuickBites
       </Link>
       <div className="flex-1" />
-      <Link href="/">
-      <Button className="h-10 w-20 mr-2 text-xs" size="sm" variant="outline">
-        Reservations
-      </Button>
-        </Link>
-        <Link href="/menu">
-      <Button className="h-10 w-20 text-xs" size="sm" variant="outline">
-        Menu
-      </Button>
-        </Link>
+      <Link href="/home">
+        <Button className="h-10 w-20 mr-2 text-xs" size="sm" variant="outline">
+          Reservations
+        </Button>
+      </Link>
+      <Link href="/menu">
+        <Button className="h-10 w-20 text-xs" size="sm" variant="outline">
+          Menu
+        </Button>
+      </Link>
     </nav>
-  )
-}
+  );
+};
 
 export default NavBar;
-

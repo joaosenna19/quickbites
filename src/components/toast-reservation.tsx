@@ -5,6 +5,7 @@ const ToastReservation = () => {
   const { toast } = useToast();
   return (
     <Button
+      className="bg-green-500 hover:bg-green-600 w-full"
       onClick={() => {
         toast({
           title: "Sucessfully reserved!",

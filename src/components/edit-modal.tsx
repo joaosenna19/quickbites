@@ -85,10 +85,10 @@ const EditModal = () => {
               </div>
             </div>
             <div className="flex justify-end space-x-2">
-              <Link href="/">
+              <Link href="/home">
                 <Button variant="destructive">Cancel</Button>
               </Link>
-              <Button>Save</Button>
+              <Button className="bg-green-500 hover:bg-green-600">Save</Button>
             </div>
           </div>
         </div>

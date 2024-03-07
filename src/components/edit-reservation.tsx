@@ -26,7 +26,7 @@ const EditReservation = () => {
         </label>
         <Input id="email" placeholder="Enter email" type="email" />
       </div>
-      <Link href="/?modal=true">
+      <Link href="/home/?modal=true">
         <Button>Edit</Button>
       </Link>
     </div>
