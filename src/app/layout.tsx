@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import EditModal from "@/components/edit-modal";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         {children}
-        <EditModal/>
-        <Footer/></body>
+        <EditModal />
+        <Toaster />
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -86,7 +86,7 @@ const EditModal = () => {
             </div>
             <div className="flex justify-end space-x-2">
               <Link href="/">
-                <Button variant="outline">Cancel</Button>
+                <Button variant="destructive">Cancel</Button>
               </Link>
               <Button>Save</Button>
             </div>

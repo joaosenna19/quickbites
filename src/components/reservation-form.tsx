@@ -3,10 +3,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import MakeReservation from "./make-reservation";
 import EditReservation from "./edit-reservation";
-import { useSearchParams } from "next/navigation";
 
 export function ReservationForm() {
-  const searchParams = useSearchParams();
   return (
     <Tabs
       className="bg-white p-4 rounded-lg shadow max-w-sm mx-auto my-8"
