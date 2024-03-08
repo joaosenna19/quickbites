@@ -23,7 +23,6 @@ export default function UserLayout({
         <NavBar />
         {children}
         <EditModal />
-        <Footer />
       </body>
     </html>
   );

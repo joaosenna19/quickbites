@@ -13,7 +13,7 @@ const NavBar = () => {
           Reservations
         </Button>
       </Link>
-      <Link href="/menu">
+      <Link href="/home/menu">
         <Button className="h-10 w-20 text-xs" size="sm" variant="outline">
           Menu
         </Button>

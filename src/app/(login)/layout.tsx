@@ -17,11 +17,7 @@ export default function AdminLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-
-        <Footer />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

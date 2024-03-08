@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const LoginAdmin = () => {
   return (
@@ -17,7 +18,9 @@ const LoginAdmin = () => {
           <Input id="email" placeholder="Email" type="email" />
         </div>
         <div className="flex flex-col">
-          <Button className="bg-green-500  mb-4">Continue</Button>
+          <Link href="/admin/manager">
+            <Button className="bg-green-500  w-full mb-4">Continue</Button>
+          </Link>
           <Button>Create new account</Button>
         </div>
       </form>
