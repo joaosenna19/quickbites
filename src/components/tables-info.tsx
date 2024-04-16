@@ -14,17 +14,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useState, useEffect, use } from "react";
-import ReservationRow from "@/components/reservation-row";
+import { useState, useEffect } from "react";
+import TablesRow from "@/components/tables-row";
 
-const ReservationsInfo = () => {
-  const [reservations, setReservations] = useState([]);
-  const fetchReservations = async () => {
+const TablesInfo = () => {
+  const [tables, setTables] = useState([]);
+  const fetchTables = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/reservation");
+      const response = await fetch("http://localhost:5000/api/table");
       if (response.ok) {
         const data = await response.json();
-        setReservations(data);
+        setTables(data);
         console.log(data);
       }
     } catch (error) {
@@ -33,13 +33,13 @@ const ReservationsInfo = () => {
   };
 
   useEffect(() => {
-    fetchReservations();
+    fetchTables();
   }, []);
 
   return (
     <div className="max-w-4xl mx-auto my-8">
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-bold">Reservations</h1>
+        <h1 className="text-3xl font-bold mr-2">Tables</h1>
         <div className="flex space-x-2">
           <Input className="block" placeholder="Search reservations" />
           <Select>
@@ -47,8 +47,8 @@ const ReservationsInfo = () => {
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent position="popper">
-              <SelectItem value="active">Active</SelectItem>
-              <SelectItem value="inactive">Inactive</SelectItem>
+              <SelectItem value="active">Booked</SelectItem>
+              <SelectItem value="inactive">Not Booked</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -56,21 +56,19 @@ const ReservationsInfo = () => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Time</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Party Size</TableHead>
-            <TableHead>Active</TableHead>
+            <TableHead>Number of Seats</TableHead>
+            <TableHead>Reserved</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
-          {reservations.map((reservation) => (
-            <ReservationRow reservation={reservation} />
-          ))}
+    {tables.map((table, index) => (
+        <TablesRow key={index} table={table} />
+        ))}
+
         </TableBody>
       </Table>
     </div>
   );
 };
 
-export default ReservationsInfo;
+export default TablesInfo;

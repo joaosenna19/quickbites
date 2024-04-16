@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
-import Footer from "@/components/footer";
 import NavBar from "@/components/nav-bar";
 import EditModal from "@/components/edit-modal";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +23,7 @@ export default function UserLayout({
         <NavBar />
         {children}
         <EditModal />
+        <Toaster />
       </body>
     </html>
   );
